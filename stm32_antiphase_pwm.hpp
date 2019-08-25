@@ -13,7 +13,7 @@
 
 class Stm32AntiphasePwm {
     private:
-        const TIM_HandleTypeDef *htim;
+        TIM_HandleTypeDef *htim;
 
     public:
         Stm32AntiphasePwm(TIM_HandleTypeDef *htim, uint32_t channel_a, uint32_t channel_b);

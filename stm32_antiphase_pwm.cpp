@@ -12,6 +12,8 @@ static void set_ccr_register(TIM_HandleTypeDef *htim, uint32_t channel,uint32_t 
 
 Stm32AntiphasePwm::Stm32AntiphasePwm(TIM_HandleTypeDef *htim, uint32_t channel_a, uint32_t channel_b) {
     this->htim = htim;
+    this->channel_a = channel_a;
+    this->channel_b = channel_b;
 
     set_ccr_register(htim, channel_a, PWM_DUTY_ZERO);
     set_ccr_register(htim, channel_b, PWM_DUTY_ZERO);

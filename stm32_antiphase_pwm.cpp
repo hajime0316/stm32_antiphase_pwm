@@ -21,11 +21,14 @@ Stm32AntiphasePwm::Stm32AntiphasePwm(TIM_HandleTypeDef *htim, uint32_t channel_a
     HAL_TIM_PWM_Start(htim, channel_a);
     HAL_TIM_PWM_Start(htim, channel_b);
 }
-Stm32AntiphasePwm::~Stm32AntiphasePwm() {
+
+Stm32AntiphasePwm::~Stm32AntiphasePwm()
+{
 
 }
 
-int Stm32AntiphasePwm::update_duty(double duty_rate){
+int Stm32AntiphasePwm::update_duty(double duty_rate)
+{
     int retval = 0;
     
     if(duty_rate > 1) {

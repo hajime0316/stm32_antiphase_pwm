@@ -39,8 +39,8 @@ int Stm32AntiphasePwm::update_duty(double duty_rate){
     
     double difference;
     difference = PWM_DUTY_MAX * duty_rate;
-    htim->Instance->CCR1 = PWM_DUTY_ZERO + difference;
-    htim->Instance->CCR2 = PWM_DUTY_ZERO - difference;
+    set_ccr_register(htim, channel_a, PWM_DUTY_ZERO + difference);
+    set_ccr_register(htim, channel_b, PWM_DUTY_ZERO - difference);
 
     return retval;
 }

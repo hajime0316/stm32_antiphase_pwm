@@ -84,3 +84,8 @@ Stm32AntiphasePwmN::Stm32AntiphasePwmN(
     HAL_TIMEx_PWMN_Start(htim, channel_a);
     HAL_TIMEx_PWMN_Start(htim, channel_b);
 }
+
+Stm32AntiphasePwmN::~Stm32AntiphasePwmN()
+{
+
+}

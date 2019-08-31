@@ -74,3 +74,13 @@ void set_ccr_register(TIM_HandleTypeDef *htim, uint32_t channel,uint32_t pulse)
 
     return;
 }
+
+Stm32AntiphasePwmN::Stm32AntiphasePwmN(
+    TIM_HandleTypeDef *htim,
+    uint32_t channel_a,
+    uint32_t channel_b
+) : Stm32AntiphasePwm(htim, channel_a, channel_b)
+{
+    HAL_TIMEx_PWMN_Start(htim, channel_a);
+    HAL_TIMEx_PWMN_Start(htim, channel_b);
+}

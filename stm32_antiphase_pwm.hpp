@@ -24,4 +24,12 @@ class Stm32AntiphasePwm {
         int update_duty(double duty_rate);
 };
 
+class Stm32AntiphasePwmN : public Stm32AntiphasePwm {
+    private:
+
+    public:
+        Stm32AntiphasePwmN(TIM_HandleTypeDef *htim, uint32_t channel_a, uint32_t channel_b);
+        ~Stm32AntiphasePwmN();
+};
+
 #endif /* STM32_ANITPHASE_PWM_HPP_ */
